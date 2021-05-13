@@ -1,0 +1,93 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    
+    width: 1400px;
+    height: 40px;
+    margin: 30px auto;
+    
+}
+
+.list {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.item {
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list__subitem {
+    display: flex;
+}
+
+.subitem {
+    margin-right: 10px;
+}
+
+.subitem a {
+    font-size: 17px;
+    
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+    position: relative;
+}
+
+.subitem a:after {
+    display: block;
+    content: "";
+    background-color: blue;
+    height: 1px;
+    width: 0%;
+    left: 50%;
+    position: absolute;
+    -webkit-transition: width .2s ease-in-out;
+    -moz--transition: width .2s ease-in-out;
+    transition: width .2s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.subitem a:hover:after, .subitem a:focus:after {
+    width: 100%;
+}
+
+.myName {
+    font-size: 17px;
+    
+}
+
+.myName a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    position: relative;
+}
+
+.myName a:after {
+    display: block;
+    content: "";
+    background-color: black;
+    height: 1px;
+    width: 0%;
+    left: 50%;
+    position: absolute;
+    -webkit-transition: width .2s ease-in-out;
+    -moz--transition: width .2s ease-in-out;
+    transition: width .2s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.myName a:hover:after, .myName a:focus:after {
+    width: 100%;
+}
