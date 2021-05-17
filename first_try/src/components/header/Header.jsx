@@ -1,4 +1,5 @@
 import React from "react"
+import { NavLink } from "react-router-dom"
 import style from "./Header.module.css"
 
 const Header = () => {
@@ -8,16 +9,16 @@ const Header = () => {
                 <div className={style.item}>
                     <div className={style.list__subitem}>
                         <div className={style.subitem}>
-                            <a href="#">Home</a>
+                            <NavLink to="/main">Home</NavLink>
                         </div>
                         <div className={style.subitem}>
-                            <a href="#">About</a>
+                            <NavLink to="#">About</NavLink>
                         </div>
                         <div className={style.subitem}>
-                            <a href="#">Блог</a>
+                            <NavLink to="/dialogs">Блог</NavLink>
                         </div>
                         <div className={style.subitem}>
-                            <a href="#">Audios</a>
+                            <NavLink to="#">Audios</NavLink>
                         </div>
                     </div>
                     <div>
