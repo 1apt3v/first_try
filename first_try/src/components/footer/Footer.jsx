@@ -1,8 +1,6 @@
 import React from "react"
 import style from "./Footer.module.css"
-// import imageSrc from './../../img/myImages.png'
-
-const image = require('./img/myImage.png')
+import imgGoogle from "./img/imgGoogle.png"
 
 const Footer = () => {
     return (
