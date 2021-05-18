@@ -6,10 +6,9 @@ const Footer = () => {
     return (
         
         <div className={style.footer}>
-            <img src={image} alt="" />
             <div className="list">
                 <div className="item">
-                    <a href="mailto:nikita@mmax.ru"></a>
+                    <a href="mailto:nikita@mmax.ru"><img src={imgGoogle} alt="" /></a>
                 </div>
                 <div className="item"></div>
                 <div className="item"></div>
