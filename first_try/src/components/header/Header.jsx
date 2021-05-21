@@ -9,16 +9,16 @@ const Header = () => {
                 <div className={style.item}>
                     <div className={style.list__subitem}>
                         <div className={style.subitem}>
-                            <NavLink to="/main">Home</NavLink>
+                            <NavLink to="/main">Главная</NavLink>
                         </div>
                         <div className={style.subitem}>
-                            <NavLink to="#">About</NavLink>
+                            <NavLink to="#">Проекты</NavLink>
                         </div>
                         <div className={style.subitem}>
-                            <NavLink to="/dialogs">Блог</NavLink>
+                            <NavLink to="/blog">Блог</NavLink>
                         </div>
                         <div className={style.subitem}>
-                            <NavLink to="#">Audios</NavLink>
+                            <NavLink to="/taskmanager">Таск-менеджер</NavLink>
                         </div>
                     </div>
                     <div>

@@ -1,7 +1,35 @@
 .footer {
+    
+    margin-top: 20px;
+    height: 60px;
+    width: 1400px;
+    background-color: rgb(240, 240, 240);
+}
+
+.list {
+    height: 60px;
+    display: flex;
+    gap: 8px;
+
+    align-items: center;
+}
+
+.item {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+
+    background-color: rgb(255, 255, 255);
+
+    position: relative;
+
+    
+}
+
+.item img {
+    width: 24px;
     position: absolute;
-    bottom: 0;
-    height: 120px;
-    width: 100%;
-    background-color: gray;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }

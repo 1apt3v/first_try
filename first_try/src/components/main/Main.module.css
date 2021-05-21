@@ -1,0 +1,27 @@
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+.content {
+    width: 600px;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+    
+}
+
+.content p {
+    font-size: 26px;
+    width: 100%;
+    
+
+}
+
+.content img {
+    width: 400px;
+    margin-top: 50px;
+}
