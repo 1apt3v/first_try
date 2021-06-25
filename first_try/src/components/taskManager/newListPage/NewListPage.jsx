@@ -1,20 +1,21 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import style from './../newListPage/newListPage.module.css'
-import { newTaskF } from '../../../redux/store'
+import style from './newListPage.module.css'
+import { newTaskListF } from '../../../redux/store'
 
 
 
 
 
-const NewTaskPage = () => {
+const NewListPage = () => {
 
-    let newTaskElement = React.createRef()
+    let newTaskListElement = React.createRef()
 
-    let addNewTask = () => {
-        let list = newTaskElement.current.value
-        newTaskF(list)
+    let addNewTaskList = () => {
+        let list = newTaskListElement.current.value
+        newTaskListF(list)
     } //отсюда передаётся значение в state
+
 
 
     return (
@@ -25,12 +26,12 @@ const NewTaskPage = () => {
                 </h1>
 
                 <div className={style.inputList}>
-                    <input id="input__inputList" type="text" ref={newTaskElement} />
+                    <input id="input__inputList" type="text" ref={newTaskListElement} />
                 </div>
 
                 <div className={style.links}>
                     <div className={style.link}>
-                        <NavLink to={"/taskmanager/"} id="btn__create" onClick={addNewTask}>Создать</NavLink>
+                        <NavLink to={"/taskmanager/"} id="btn__createTask" onClick={addNewTaskList}>Создать</NavLink>
                     </div>
                     <div className={style.link}>
                         <NavLink to={"/taskmanager/"} id="btn__cancel">Отменить</NavLink>
@@ -41,4 +42,4 @@ const NewTaskPage = () => {
     )
 }
 
-export default NewTaskPage
+export default NewListPage

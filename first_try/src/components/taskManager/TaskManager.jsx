@@ -1,19 +1,19 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import TaskListGeneration from './TaskListGeneration/TastListGeneration'
+import { NavLink, Route } from 'react-router-dom'
+import ListGeneration from './TaskListGeneration/ListGeneration'
 import style from './TaskManager.module.css'
+import svgPlus from './img/plus.svg'
+import TasksGeneration from './Tasks/TasksGeneration'
 
 
-let tasks = [
-    { id: 1, name: "Список 1" },
-    { id: 2, name: "Список 2" },
-    { id: 3, name: "Список 3" },
-    { id: 4, name: "Список 4" }
-]
 
 const TaskManager = (props) => {
-
-    let tasksElement = tasks.map(tasks => <TaskListGeneration tasks={tasks} />)
+    let listsElement = <ListGeneration lists={props.taskManager.lists} />
+    // let tasksElement = props.taskManager.tasks.map(tasks => <Tasks tasks={tasks} />)
+    
+    // idList={idList}
+    let tasksElement = <TasksGeneration taskManager={props.taskManager} />
+    
 
     return (
         <div className={style.TaskManagerPage}>
@@ -21,14 +21,28 @@ const TaskManager = (props) => {
                 <div className={style.taskList}>
                     <h1>Списки</h1>
                     <div className={style.list}>
-                        {tasksElement}
+                        {listsElement}
                     </div>
-                    <div className={style.newListBtn}>
-                        <NavLink to={"/createtask"}>+ Новый список</NavLink>
+                    <div className={style.btnNewList}>
+                        <div className={style.newListBtn}>
+                            <NavLink to={"/createlist"}>
+                                + Новый список
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
                 <div className={style.tasks}>
                     <h1>Задачи</h1>
+                    <div className={style.listTasks}>
+                        {tasksElement}
+                    </div>
+                    <div className={style.btnNewTask}>
+                        <div className={style.newTaskBtn}>
+                            <NavLink to={"/createtask"}>
+                                <img src={svgPlus} alt="plus" />
+                            </NavLink>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
