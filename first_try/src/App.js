@@ -78,11 +78,13 @@ let AppContainer = compose(
 const MainApp = () => {
     return (
         <Provider store={store}>
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <AppContainer />
             </BrowserRouter>
         </Provider>
     )
 }
+
+
 
 export default MainApp
