@@ -24,10 +24,12 @@ const initialState = {
 }
 
 const taskManagerReducer = (state = initialState, action) => {
-    // switch(action.type) {
-    //     case 
-    // }
-    return state
+    switch (action.type) {
+        default:
+            return state
+    }
 }
+
+
 
 export default taskManagerReducer

@@ -8,11 +8,12 @@ import TasksGeneration from './Tasks/TasksGeneration'
 
 
 const TaskManager = (props) => {
-    let listsElement = <ListGeneration lists={props.taskManager.lists} />
+    debugger
+    let listsElement = <ListGeneration lists={props.lists} />
     // let tasksElement = props.taskManager.tasks.map(tasks => <Tasks tasks={tasks} />)
     
     // idList={idList}
-    let tasksElement = <TasksGeneration taskManager={props.taskManager} />
+    let tasksElement = <TasksGeneration taskManager={props} />
     
 
     return (

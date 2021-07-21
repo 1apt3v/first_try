@@ -1,5 +1,4 @@
 const ADD_MESSAGE = "ADD-MESSAGE"
-const UPDATE_TEXT = "UPDATE-MESSAGE"
 
 const initialState = {
     users: [
@@ -16,7 +15,6 @@ const initialState = {
         { id: 3, message: "123" },
         { id: 4, message: "qwerty" },
     ],
-    newMessageText: '',
 }
 
 const messengerReducer = (state = initialState, action) => {
@@ -25,13 +23,6 @@ const messengerReducer = (state = initialState, action) => {
             return {
                 ...state,
                 messages: [...state.messages, { id: state.messages.length, message: action.text }],
-                newMessageText: ''
-            }            
-        }
-        case UPDATE_TEXT: {
-            return { 
-                ...state,
-                newMessageText: action.newText,
             }
         }
         default: {
@@ -43,12 +34,7 @@ const messengerReducer = (state = initialState, action) => {
 
 export const addMessageActionCreator = text => ({
     type: "ADD-MESSAGE",
-    text: text
-})
-
-export const updateTextActionCreator = text => ({
-    type: "UPDATE-MESSAGE",
-    newText: text
+    text
 })
 
 export default messengerReducer

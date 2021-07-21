@@ -10,7 +10,7 @@ const initialState = {
         { id: 8, name: "Блог 8" }
     ],
     posts: [
-        { id: 1, heading: "Заголовок 1", }
+        { id: 1, body: "Привет всем!" }
     ]
 }
 

@@ -2,23 +2,36 @@ import React from 'react'
 import style from './Messenger.module.css'
 import UsersMessenger from './users/UsersMessenger'
 import Message from './messages/Message'
+import { Redirect } from 'react-router'
+import { Field, reduxForm } from 'redux-form'
+import { Textarea } from '../../common/FormsControls/FormsControls'
+import { maxLenghtCreator, required } from '../../../utils/validator/validators'
+
+const maxLenght50 = maxLenghtCreator(50)
+
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div className={style.sendArea}>
+                <Field className={style.text} component={Textarea} validate={[required, maxLenght50]} name="newMessageText" placeholder="Введите сообщение" />
+                <button className={style.buttonSend}>Отправить</button>
+            </div>
+        </form>
+    )
+}
+
+const AddMessageFormRedux = reduxForm({form: "dialogAddMessageForm"})(AddMessageForm)
 
 const Messenger = (props) => {
-    debugger
     let usersElements = props.social.users.map(user => <UsersMessenger user={user} key={user.id} />)
     let messengerElements = props.social.messages.map(message => <Message message={message} key={message.id} />)
 
-    let newMessengerElement = React.createRef()
-
-    let textChange = () => {
-        // let text = e.target.value; // первый способ 
-        let text = newMessengerElement.current.value
-        props.updateNewText(text)
+    let addNewMessage = (values) => {
+        props.addMessageText(values.newMessageText)
     }
 
-    let addMessage = () => {
-        let text = newMessengerElement.current.value // второй способ
-        props.addMessageText(text)
+    if (!props.isAuth) {
+        return <Redirect to={'/login'} />
     }
 
     return (
@@ -31,10 +44,7 @@ const Messenger = (props) => {
                     </div>
                     <div className={style.messenger}>
                         {messengerElements}
-                        <div className={style.sendArea}>
-                            <textarea className={style.text} onChange={textChange} value={props.social.newMessageText} ref={newMessengerElement} placeholder="Введите сообщение"></textarea>
-                            <button className={style.buttonSend} onClick={addMessage}>Отправить</button>
-                        </div>
+                        <AddMessageFormRedux onSubmit={addNewMessage} />
                     </div>
                 </div>
             </div>

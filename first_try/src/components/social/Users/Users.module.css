@@ -1,0 +1,65 @@
+.ImageUser {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.paginator {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.user {
+    border-bottom: 1px solid rgb(179, 179, 179);
+    margin-bottom: 35px;
+}
+
+.userWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttonFollowUnfollow button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.buttonFollowUnfollow button:disabled {
+    background-color: lightgray;
+    color: gray;
+}
+
+.follow button {
+    background-color: rgb(104, 104, 240);
+    color: white;
+    transition: background-color .2s;
+}
+
+.unfollow button {
+    background-color: rgb(54, 160, 196);
+    color: white;
+    transition: background-color .2s;
+}
+
+.follow button:hover {
+    background-color: rgb(82, 82, 199);
+    color: white;
+}
+
+.unfollow button:hover {
+    background-color: rgb(49, 136, 165);
+    color: white;
+}

@@ -3,6 +3,7 @@ import { NavLink, Route } from 'react-router-dom'
 import style from "./SocialPage.module.css"
 import MessengerContainer from './../Messenger/MessengerContainer'
 import UsersContainer from './../Users/UsersContainer'
+import ProfileContainer from '../Profile/ProfileContainer'
 import profileImg from "./img/profile.svg"
 import messengerImg from "./img/messenger.svg"
 import usersImg from "./img/users.svg"
@@ -13,7 +14,7 @@ const SocialPage = (props) => {
             <div className={style.sidebar}>
                 <ul>
                     <li>
-                        <NavLink className={style.item} to="/social/profile">
+                        <NavLink className={style.item} to={"/social/profile/"}>
                             <img src={profileImg} />
                             <span>Профиль</span>
                         </NavLink>
@@ -32,6 +33,7 @@ const SocialPage = (props) => {
                     </li>
                 </ul>
             </div>
+            <Route path="/social/profile/:userId?" render={() => <ProfileContainer />} />
             <Route path="/social/messenger" render={() => <MessengerContainer social={props.social} dispatch={props.dispatch} />} />
             <Route path="/social/users" render={() => <UsersContainer />} />
         </div>

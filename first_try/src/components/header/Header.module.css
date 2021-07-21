@@ -91,3 +91,35 @@ p {
 .myName a:hover:after, .myName a:focus:after {
     width: 100%;
 }
+
+.loginBlock {
+    font-size: 17px;
+    
+}
+
+.loginBlock a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    position: relative;
+}
+
+.loginBlock a:after {
+    display: block;
+    content: "";
+    background-color: black;
+    height: 1px;
+    width: 0%;
+    left: 50%;
+    position: absolute;
+    -webkit-transition: width .2s ease-in-out;
+    -moz--transition: width .2s ease-in-out;
+    transition: width .2s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.loginBlock a:hover:after, .myName a:focus:after {
+    width: 100%;
+}
