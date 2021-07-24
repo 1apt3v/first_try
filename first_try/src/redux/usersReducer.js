@@ -19,9 +19,6 @@ let initialState = {
 }
 
 const usersReducer = (state = initialState, action) => {
-
-
-
     switch (action.type) {
         case FOLLOW: {
             return {
@@ -85,6 +82,7 @@ export const toggleFollowingInProgress = (isFetching, userId) => ({ type: TOGGLE
 
 
 export const requestUsers = (page, pageSize) => {
+    
     return async (dispatch) => {
         dispatch(toggleIsFetching(true))
         dispatch(setCurrentPage(page))

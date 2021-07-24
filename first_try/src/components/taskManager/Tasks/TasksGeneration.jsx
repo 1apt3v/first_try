@@ -1,15 +1,21 @@
 import React from 'react'
-import Tasks from './Tasks'
 
 const TasksGeneration = (props) => {
-    // debugger
-    props.taskManager.direction.map(direction => 
-        <Tasks direction={direction} tasks={props.taskManager.tasks} lists={props.taskManager.lists} key={direction.id} />
-    )
-
+    
+    const tasksElement = props.taskManager.tasks.map(task => <Tasks body={task.body} id={task.id} key={task.id} />)
+    
     return (
         <div>
-            {/* <Route path={"/taskmanager/" + 0} render={() => <Task tasks={tasks} />} /> */}
+            {tasksElement}
+        </div>
+    )
+}
+
+
+const Tasks = ({ body, id }) => {
+    return (
+        <div>
+            {body}
         </div>
     )
 }

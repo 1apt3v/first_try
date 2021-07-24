@@ -1,19 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import style from './newListPage.module.css'
-import { newTaskListF } from '../../../redux/store'
 
 
 
 
 
-const NewListPage = () => {
-
+const NewListPage = (props) => {
     let newTaskListElement = React.createRef()
 
     let addNewTaskList = () => {
         let list = newTaskListElement.current.value
-        newTaskListF(list)
+        props.setNewList(list)
     } //отсюда передаётся значение в state
 
 

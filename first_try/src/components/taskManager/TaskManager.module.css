@@ -28,45 +28,25 @@ h1 {
     padding: 25px 30px;
     background-color: rgb(238, 238, 238);
     border-radius: 20px 0 0 20px;
-
     display: flex;
     flex-direction: column;
 }
 
 .taskList h1 {
     flex: 0 0 auto;
-    
 }
 
 .list {
-    height: 1%; /* ??? */
-    margin: 30px 0 ;
+    height: 1%;
+    /* ??? */
+    margin: 30px 0;
     flex: 1 0 auto;
-
     overflow-y: scroll;
 }
 
-.tasks {
-    width: 850px;
-    height: 100%;
-    padding: 25px 30px;
-
-    background-color: rgb(216, 216, 216);
-    border-radius: 0 20px 20px 0;
-    position: relative;
-}
-
-.tasks h1, .taskList h1 {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Chrome/Safari/Opera */
-    -khtml-user-select: none; /* Konqueror */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;  
-}
-
-.taskBtn {
+.list a, .task {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 40px;
     width: 100%;
@@ -79,6 +59,42 @@ h1 {
     margin-bottom: 10px;
 }
 
+.tasks {
+    width: 850px;
+    height: 100%;
+    padding: 25px 30px;
+    background-color: rgb(216, 216, 216);
+    border-radius: 0 20px 20px 0;
+    position: relative;
+}
+
+.tasks h1, .taskList h1 {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.taskButtons {
+    display: none;
+    margin-right: 10px;
+}
+
+.task:hover .taskButtons {
+    display: block;
+}
+
+.taskButtons img {
+    height: 20px;
+}
+
 .taskBtn.activeLink {
     background-color: rgb(54, 54, 230);
 }
@@ -89,15 +105,12 @@ h1 {
     height: 40px;
     border-radius: 6px;
     /* margin-bottom: 20px; */
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-color: rgba(34, 34, 255, 0.7);
     box-shadow: none;
     border: none;
-    
     color: white;
     transition: box-shadow .2s;
     transition: background-color linear .1s;
@@ -112,9 +125,7 @@ h1 {
     font-size: 18px;
     text-decoration: none;
     color: white;
-    
 }
-
 
 .btnNewTask {
     width: 40px;
@@ -128,7 +139,6 @@ h1 {
     margin-right: 20px;
 }
 
-
 .btnNewTask a {
     text-decoration: none;
     font-size: 20px;
@@ -140,20 +150,16 @@ h1 {
     height: 40px;
     border-radius: 50%;
     /* margin-bottom: 20px; */
-
     font-size: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-color: rgba(34, 34, 255, 0.7);
     box-shadow: none;
     border: none;
-    
     color: white;
     transition: box-shadow .2s;
     transition: background-color linear .1s;
-    
 }
 
 .newTaskBtn a:hover {
@@ -161,28 +167,10 @@ h1 {
     background-color: rgb(54, 54, 230);
 }
 
-
 .newTaskBtn img {
     width: 24px;
-    
 }
-
 
 .listTasks {
     margin: 30px 0;
-}
-
-.task {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    width: 100%;
-    background-color: rgba(34, 34, 255, 0.7);
-    padding-left: 10px;
-    font-size: 18px;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-bottom: 10px;
-    cursor: pointer;
 }

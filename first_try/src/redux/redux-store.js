@@ -1,7 +1,7 @@
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux'
 import messengerReducer from './messengerReducer'
 import blogPageReducer from './blogPageReducer'
-import taskManagerReducer from './taskManagereReducer'
+import taskManagerReducer from './taskManagerReducer'
 import usersReducer from './usersReducer'
 import profileReducer from './profileReducer'
 import authReducer from './authReducer'

@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 import style from './../TaskManager.module.css'
 
 
-const List = (props) => {
+const List = ({body, id}) => {
     return (
-        <NavLink to={"/taskmanager/" + props.lists.idList} className={style.taskBtn} activeClassName={style.activeLink}>{props.lists.listName}</NavLink>
+        <NavLink to={"/taskmanager/" + id} className={style.taskBtn} activeClassName={style.activeLink}>{body}</NavLink>
     )
 }
 

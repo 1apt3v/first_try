@@ -11,7 +11,7 @@ import NewTaskPage from './components/taskManager/newTaskPage/NewTaskPage'
 import Login from './components/social/Login/Login';
 // import MessengerContainer from './components/social/Messenger/MessengerContainer'
 
-import { Route, withRouter } from 'react-router-dom'
+import { HashRouter, Route, withRouter } from 'react-router-dom'
 import React, { Suspense } from 'react';
 
 import { connect } from 'react-redux';
@@ -22,14 +22,17 @@ import Preloader from './components/common/Preloader/Preloader';
 
 import store from "./redux/redux-store"
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 import { withSuspense } from './hoc/withSuspense';
+import { setNewList } from './redux/taskManagerReducer';
+
 
 const SocialPage = React.lazy(() => import('./components/social/SocialPage/SocialPage'))
 const TaskManagerContainer = React.lazy(() => import('./components/taskManager/TaskManagerContainer'))
 
 
 class App extends React.Component {
+    
+
     componentDidMount() {
         this.props.initializeApp()
     }
@@ -38,7 +41,6 @@ class App extends React.Component {
         if (!this.props.initialized) {
             return <Preloader />
         }
-
         return (
             <div>
                 <div className="page">
@@ -48,9 +50,12 @@ class App extends React.Component {
                         <Route path="/main" render={() => <Main />} />
                         <Route path="/blog" render={() => <BlogContainer />} />
 
-                        <Route path="/taskmanager/" render={withSuspense(TaskManagerContainer)} />
-                        <Route path="/createlist" render={() => <NewListPage />} />
-                        <Route path="/createtask" render={() => <NewTaskPage />} />
+                        <Route path="/taskmanager/:id?" render={withSuspense(TaskManagerContainer)} />
+                        <Route path="/createlist" render={() => <NewListPage setNewList={this.props.setNewList} />} />
+                        <Route path="/createtask" render={() => {
+                            debugger
+                            return <NewTaskPage />
+                        }} />
 
 
                         <Route path="/social/" render={withSuspense(SocialPage)} />
@@ -73,14 +78,14 @@ const mapStateToProps = (state) => ({
 
 let AppContainer = compose(
     withRouter,
-    connect(mapStateToProps, { initializeApp }))(App)
+    connect(mapStateToProps, { initializeApp, setNewList }))(App)
 
 const MainApp = () => {
     return (
         <Provider store={store}>
-            <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <HashRouter>
                 <AppContainer />
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
     )
 }

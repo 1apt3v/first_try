@@ -33,7 +33,7 @@ const messengerReducer = (state = initialState, action) => {
 
 
 export const addMessageActionCreator = text => ({
-    type: "ADD-MESSAGE",
+    type: ADD_MESSAGE,
     text
 })
 
