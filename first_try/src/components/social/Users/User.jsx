@@ -9,7 +9,7 @@ const User = ({ user, followingInProgress, unfollow, follow }) => {
             <div className={style.userWrapper}>
                 <div>
                     <NavLink to={"/social/profile/" + user.id}>
-                        <img className={style.ImageUser} src={user.photos.small != null ? user.photos.small : userNull} />
+                        <img alt="imageUser" className={style.ImageUser} src={user.photos.small != null ? user.photos.small : userNull} />
                     </NavLink>
                 </div>
                 <div className={`${style.buttonFollowUnfollow} ${user.followed ? style.unfollow : style.follow}`}>

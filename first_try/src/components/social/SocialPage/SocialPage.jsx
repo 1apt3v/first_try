@@ -15,19 +15,19 @@ const SocialPage = (props) => {
                 <ul>
                     <li>
                         <NavLink className={style.item} to={"/social/profile/"}>
-                            <img src={profileImg} />
+                            <img alt="profileImg" src={profileImg} />
                             <span>Профиль</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink className={style.item} to="/social/messenger">
-                            <img src={messengerImg} />
+                            <img alt="messengerImg" src={messengerImg} />
                             <span>Сообщения</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink className={style.item} to="/social/users">
-                            <img src={usersImg} />
+                            <img alt="usersImg" src={usersImg} />
                             <span>Пользователи</span>
                         </NavLink>
                     </li>

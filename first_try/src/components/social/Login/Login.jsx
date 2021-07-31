@@ -14,15 +14,12 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
             {createField("Email", "email", [required], Input)}
             {createField("Password", "password", [required], Input, { type: "password" })}
             {createField(null, "rememberMe", [], Input, { type: "checkbox" }, "Запомнить меня")}
-            {captchaUrl && <img src={captchaUrl} />}
+            {captchaUrl && <img src={captchaUrl} alt="Captcha" />}
             {captchaUrl && createField("Текст с картинки", "captcha", [required], Input)}
 
             {error && <div className={style.formSummeryError}>
                 {error}
             </div>}
-
-
-
 
             <div><button>Войти</button></div>
         </form>

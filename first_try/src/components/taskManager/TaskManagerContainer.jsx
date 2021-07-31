@@ -2,8 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'redux'
-import { setNewTask, deleteTask, renameTask } from '../../redux/taskManagerReducer'
+import { setNewTask, deleteTask, renameTask, renameList, deleteList } from '../../redux/taskManagerReducer'
 import TaskManager from './TaskManager'
+
+
 
 class TaskManagerContainer extends React.Component {
     render() {
@@ -23,4 +25,4 @@ const mapStateToProps = (state) => {
 
 
 
-export default compose(withRouter, connect(mapStateToProps, {setNewTask, renameTask, deleteTask}))(TaskManagerContainer)
+export default compose(withRouter, connect(mapStateToProps, { setNewTask, renameTask, deleteTask, renameList, deleteList }))(TaskManagerContainer)

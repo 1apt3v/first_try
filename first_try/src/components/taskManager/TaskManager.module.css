@@ -44,7 +44,7 @@ h1 {
     overflow-y: scroll;
 }
 
-.list a, .task {
+.listBtn, .task {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,20 +82,24 @@ h1 {
     user-select: none;
 }
 
-.taskButtons {
+.taskButtons, .listButtons {
     display: none;
     margin-right: 10px;
 }
 
-.task:hover .taskButtons {
+.task:hover .taskButtons, .listBtn:hover .listButtons {
     display: block;
 }
 
-.taskButtons img {
+.taskButtons img, .listButtons img {
     height: 20px;
 }
 
 .taskBtn.activeLink {
+    background-color: rgb(54, 54, 230);
+}
+
+.listBtn.activeLink {
     background-color: rgb(54, 54, 230);
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Preloader from '../../../common/Preloader/Preloader'
 import userNull from './../../../../assets/images/userNull.png'
-import facebookIcon from './../../../../assets/images/icons/facebookIcon.png'
+// import facebookIcon from './../../../../assets/images/icons/facebookIcon.png'
 import style from './../Profile.module.css'
 import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 import ProfileDataForm from './ProfileDataForm'
@@ -34,8 +34,8 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
     return (
         <div className={style.profileInfo}>
             <div className={style.avatar}>
-                <label for="photoLoad">
-                    <img src={profile.photos.large != null ? profile.photos.large : userNull} />
+                <label htmlFor="photoLoad">
+                    <img alt="avatar" src={profile.photos.large != null ? profile.photos.large : userNull} />
                 </label>
                 {isOwner && <input id={"photoLoad"} type={"file"} onChange={onMainPhotoSelected} />}
             </div>

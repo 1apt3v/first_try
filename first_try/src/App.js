@@ -6,13 +6,13 @@ import BlogContainer from './components/blog/BlogContainer'
 import RootPage from './components/rootPage/RootPage'
 // import TaskManagerContainer from './components/taskManager/TaskManagerContainer'
 import NewListPage from './components/taskManager/newListPage/NewListPage'
-import NewTaskPage from './components/taskManager/newTaskPage/NewTaskPage'
+
 // import SocialPage from './components/social/SocialPage/SocialPage';
 import Login from './components/social/Login/Login';
 // import MessengerContainer from './components/social/Messenger/MessengerContainer'
 
 import { HashRouter, Route, withRouter } from 'react-router-dom'
-import React, { Suspense } from 'react';
+import React from 'react';
 
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -52,10 +52,7 @@ class App extends React.Component {
 
                         <Route path="/taskmanager/:id?" render={withSuspense(TaskManagerContainer)} />
                         <Route path="/createlist" render={() => <NewListPage setNewList={this.props.setNewList} />} />
-                        <Route path="/createtask" render={() => {
-                            debugger
-                            return <NewTaskPage />
-                        }} />
+
 
 
                         <Route path="/social/" render={withSuspense(SocialPage)} />

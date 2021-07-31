@@ -18,8 +18,4 @@ let mapStateToProps = (state) => ({
 })
 
 
-let mapDispatchToProps = {
-
-}
-
 export default connect(mapStateToProps, { logout })(HeaderContainer)

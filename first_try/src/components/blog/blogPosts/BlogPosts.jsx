@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import style from './../Blog.module.css'
+// import { NavLink } from 'react-router-dom'
+// import style from './../Blog.module.css'
 
 const Posts = (props) => {
     return (

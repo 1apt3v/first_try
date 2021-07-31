@@ -11,7 +11,7 @@ import deleteIcon from './img/delete.svg'
 
 
 const TaskManager = (props) => {
-    let listsElement = <ListGeneration lists={props.lists} />
+    let listsElement = <ListGeneration renameList={props.renameList} deleteList={props.deleteList} lists={props.lists} />
 
     return (
         <div className={style.TaskManagerPage}>
